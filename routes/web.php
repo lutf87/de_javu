@@ -34,7 +34,7 @@ Route::get('/kategori/{id}', [HomepageController::class, 'produkperkategori']);
 Route::get('/produk', [HomepageController::class, 'produk']);
 Route::get('/produk/{id}', [HomepageController::class, 'produkdetail']);
 
-Route::group(['prefix' => 'admin'], function() {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('/', [DashboardController::class, 'index']);
     //route kategori
     Route::group(['prefix'=>'/kategori'], function(){
