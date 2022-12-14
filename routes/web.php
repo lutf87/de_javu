@@ -19,3 +19,5 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [HomepageController::class, 'index']);
+Route::get('/about', [HomepageController::class, 'about']);
+Route::get('/kontak', [HomepageController::class, 'kontak']);
