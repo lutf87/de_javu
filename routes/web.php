@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\ProdukController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,6 +36,14 @@ Route::group(['prefix' => 'admin'], function() {
       Route::get('/', [KategoriController::class, 'index'])->name('kategori.index');
       Route::get('/create', [KategoriController::class, 'create'])->name('ketegori.create');
       Route::get('/edit/{id}', [KategoriController::class, 'edit'])->name('kategori.edit');
+    });
+
+    //route produk
+    Route::group(['prefix'=>'/produk'], function(){
+      Route::get('/', [ProdukController::class, 'index'])->name('produk.index');
+      Route::get('/create', [ProdukController::class, 'create'])->name('produk.create');
+      Route::get('/show/{id}', [ProdukController::class, 'show'])->name('produk.show');
+      Route::get('/edit/{id}', [ProdukController::class, 'edit'])->name('produk.edit');
 
   });
 
