@@ -8,6 +8,7 @@ use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
