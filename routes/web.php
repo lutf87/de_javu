@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\KategoriController;
@@ -44,7 +45,12 @@ Route::group(['prefix' => 'admin'], function() {
       Route::get('/create', [ProdukController::class, 'create'])->name('produk.create');
       Route::get('/show/{id}', [ProdukController::class, 'show'])->name('produk.show');
       Route::get('/edit/{id}', [ProdukController::class, 'edit'])->name('produk.edit');
+    });
 
-  });
+    //route customer
+    Route::group(['prefix'=>'/customer'], function(){
+      Route::get('/', [CustomerController::class, 'index'])->name('customer.index');
+      Route::get('/edit/{id}', [CustomerController::class, 'edit'])->name('customer.edit');
+    });
 
 });
