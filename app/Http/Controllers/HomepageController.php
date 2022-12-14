@@ -26,4 +26,19 @@ class HomepageController extends Controller
         return view('homepage.kategori', $data);
     }
 
+    public function produkperkategori()
+    {
+        # code...
+    }
+
+    public function produk()
+    {
+        # code...
+    }
+
+    public function produkdetail()
+    {
+        # code...
+    }
+
 }
