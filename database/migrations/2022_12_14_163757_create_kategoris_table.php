@@ -22,8 +22,10 @@ class CreateKategorisTable extends Migration
             $table->string('status');
             $table->string('foto')->nullable();
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->engine = 'InnoDB';
         });
     }
 
@@ -34,6 +36,9 @@ class CreateKategorisTable extends Migration
      */
     public function down()
     {
+        // Schema::table('kategoris', function (Blueprint $table) {
+
+        // });
         Schema::dropIfExists('kategoris');
     }
 }
