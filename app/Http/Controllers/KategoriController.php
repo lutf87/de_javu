@@ -9,9 +9,9 @@ class KategoriController extends Controller
 {
     public function index(Request $request)
     {
-
-        $data = array('title' => 'Kategori Produk');
-        return view('kategori.index', $data);
+        $itemkategori = Kategori::orderBy('created_at', 'desc')->paginate(20);
+        $data = array('title' => 'Kategori Produk', 'itemkategori' => $itemkategori);
+        return view('kategori.index', $data)->with('no', ($request->input('page', 1) - 1) * 20);
     }
 
     public function create()
