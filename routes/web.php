@@ -39,7 +39,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     //route kategori
     Route::group(['prefix'=>'/kategori'], function(){
       Route::get('/', [KategoriController::class, 'index'])->name('kategori.index');
-      Route::get('/create', [KategoriController::class, 'create'])->name('ketegori.create');
+      Route::get('/create', [KategoriController::class, 'create'])->name('kategori.create');
       Route::get('/edit/{id}', [KategoriController::class, 'edit'])->name('kategori.edit');
     });
 
